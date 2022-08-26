@@ -3,6 +3,8 @@ Control an old Crestron RoomView flash Application with openHAB
 
 Crestron RoomView is an application for controlling projectors.
 
+<meta name="google-site-verification" content="FPSzx8QP409imklzUfdtseBX2hKeTr0J_Ly5Lq3Bs1o" />
+
 ![picture alt](https://raw.githubusercontent.com/Michdo93/openHAB-Crestron-Room-View-Control/main/crestron_room_view.JPG)
 
 The given python code will click on different buttons of the Crestron RoomView application. You can remote control it over SSH. This could be embedded in openHAB.
