@@ -46,7 +46,7 @@ Then you have to download the `room_view.py` file and place it to a path where y
 ```
 cd /home/<user>
 wget https://raw.githubusercontent.com/Michdo93/openHAB-Crestron-Room-View-Control/main/room_view.py
-sudo chmod +x room
+sudo chmod +x room_view.py
 ```
 
 On Windows:
