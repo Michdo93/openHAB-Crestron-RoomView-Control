@@ -143,3 +143,171 @@ Please make sure that you replace `<user>` with the username of your VM and `<pa
  * You have to make sure that Firefox is your default browser.
  * You have to make sure that Firefox will start in Fullscreen mode. Therefore you can run firefox and activate the fullscreen mode. On the next start the fullscreen mode should automatically be activated.
  * You have to make sure that the virtual machine is starting and the user is logged in. I recommend to autologin the user because pyautogui can only run if the user is logged in.
+
+## Items
+
+You have to add following items:
+
+```
+Group Crestron_RoomView_Control "Crestron RoomView Control" <screen>
+
+Switch Crestron_RoomView_Control_OpenFirefox "Open Firefox" (Crestron_RoomView_Control)
+Switch Crestron_RoomView_Control_CloseFirefox "Close Firefox" (Crestron_RoomView_Control)
+Switch Crestron_RoomView_Control_TogglePower "On/off projector" (Crestron_RoomView_Control)
+Switch Crestron_RoomView_Control_VolumeDown "Decrease volume" (Crestron_RoomView_Control)
+Switch Crestron_RoomView_Control_VolumeUp "Increase volume" (Crestron_RoomView_Control)
+Switch Crestron_RoomView_Control_Mute_Volume "Mute volume" (Crestron_RoomView_Control)
+Switch Crestron_RoomView_Control_SrcToComputer1 "Computer1/YPbPr1" (Crestron_RoomView_Control)
+Switch Crestron_RoomView_Control_SrcToComputer2 "Computer2/YPbPr2" (Crestron_RoomView_Control)
+Switch Crestron_RoomView_Control_SrcToHDMI1 "HDMI1" (Crestron_RoomView_Control)
+Switch Crestron_RoomView_Control_SrcToHDMI2 "HDMI2" (Crestron_RoomView_Control)
+Switch Crestron_RoomView_Control_SrcToVideo "Video" (Crestron_RoomView_Control)
+```
+
+## Rules
+
+The rules can look as example like following:
+
+```
+rule "Crestron_RoomView_Control_OpenFirefox changed to ON"
+when
+    Item Crestron_RoomView_Control_OpenFirefox changed to ON
+then
+    executeCommandLine("/usr/bin/sshpass","-p","<password>","/usr/bin/ssh","-t","-o","StrictHostKeyChecking=no","<user>@<ip>","C:\Program Files\PSTools\PsExec.exe","-u","<user>","-p","<password>","-i","1","-w","C:\Users\<user>","powershell.exe","<path/to/python.exe>","C:\Users\<user>\room_view.py","openFirefox")
+    Crestron_RoomView_Control_OpenFirefox.postUpdate(OFF)
+end
+
+rule "Crestron_RoomView_Control_CloseFirefox changed to ON"
+when
+    Item Crestron_RoomView_Control_CloseFirefox changed to ON
+then
+    executeCommandLine("/usr/bin/sshpass","-p","<password>","/usr/bin/ssh","-t","-o","StrictHostKeyChecking=no","<user>@<ip>","C:\Program Files\PSTools\PsExec.exe","-u","<user>","-p","<password>","-i","1","-w","C:\Users\<user>","powershell.exe","<path/to/python.exe>","C:\Users\<user>\room_view.py","closeFirefox")
+    Crestron_RoomView_Control_CloseFirefox.postUpdate(OFF)
+end
+
+rule "Crestron_RoomView_Control_TogglePower changed to ON"
+when
+    Item Crestron_RoomView_Control_TogglePower changed to ON
+then
+    Crestron_RoomView_Control_OpenFirefox.sendCommand(ON)
+    Thread::sleep(5000)  // wait 5 seconds
+    executeCommandLine("/usr/bin/sshpass","-p","<password>","/usr/bin/ssh","-t","-o","StrictHostKeyChecking=no","<user>@<ip>","C:\Program Files\PSTools\PsExec.exe","-u","<user>","-p","<password>","-i","1","-w","C:\Users\<user>","powershell.exe","<path/to/python.exe>","C:\Users\<user>\room_view.py","togglePower")
+    Crestron_RoomView_Control_TogglePower.postUpdate(OFF)
+    Thread::sleep(15000)  // wait 15 seconds (projector starting time)
+    Crestron_RoomView_Control_CloseFirefox.sendCommand(ON)
+end
+
+rule "Crestron_RoomView_Control_VolumeDown changed to ON"
+when
+    Item Crestron_RoomView_Control_VolumeDown changed to ON
+then
+    Crestron_RoomView_Control_OpenFirefox.sendCommand(ON)
+    Thread::sleep(5000)  // wait 5 seconds
+    executeCommandLine("/usr/bin/sshpass","-p","<password>","/usr/bin/ssh","-t","-o","StrictHostKeyChecking=no","<user>@<ip>","C:\Program Files\PSTools\PsExec.exe","-u","<user>","-p","<password>","-i","1","-w","C:\Users\<user>","powershell.exe","<path/to/python.exe>","C:\Users\<user>\room_view.py","reduceVolume")
+    Crestron_RoomView_Control_VolumeDown.postUpdate(OFF)
+    Thread::sleep(3000)
+    Crestron_RoomView_Control_CloseFirefox.sendCommand(ON)
+end
+
+rule "Crestron_RoomView_Control_VolumeUp changed to ON"
+when
+    Item Crestron_RoomView_Control_VolumeUp changed to ON
+then
+    Crestron_RoomView_Control_OpenFirefox.sendCommand(ON)
+    Thread::sleep(5000)  // wait 5 seconds
+    executeCommandLine("/usr/bin/sshpass","-p","<password>","/usr/bin/ssh","-t","-o","StrictHostKeyChecking=no","<user>@<ip>","C:\Program Files\PSTools\PsExec.exe","-u","<user>","-p","<password>","-i","1","-w","C:\Users\<user>","powershell.exe","<path/to/python.exe>","C:\Users\<user>\room_view.py","increaseVolume")
+    Crestron_RoomView_Control_VolumeUp.postUpdate(OFF)
+    Thread::sleep(3000)
+    Crestron_RoomView_Control_CloseFirefox.sendCommand(ON)
+end
+
+rule "Crestron_RoomView_Control_Mute_Volume changed to ON"
+when
+    Item Crestron_RoomView_Control_Mute_Volume changed to ON
+then
+    Crestron_RoomView_Control_OpenFirefox.sendCommand(ON)
+    Thread::sleep(5000)  // wait 5 seconds
+    executeCommandLine("/usr/bin/sshpass","-p","<password>","/usr/bin/ssh","-t","-o","StrictHostKeyChecking=no","<user>@<ip>","C:\Program Files\PSTools\PsExec.exe","-u","<user>","-p","<password>","-i","1","-w","C:\Users\<user>","powershell.exe","<path/to/python.exe>","C:\Users\<user>\room_view.py","muteVolume")
+    Crestron_RoomView_Control_Mute_Volume.postUpdate(OFF)
+    Thread::sleep(3000)
+    Crestron_RoomView_Control_CloseFirefox.sendCommand(ON)
+end
+
+rule "Crestron_RoomView_Control_SrcToComputer1 changed to ON"
+when
+    Item Crestron_RoomView_Control_SrcToComputer1 changed to ON
+then
+    Crestron_RoomView_Control_OpenFirefox.sendCommand(ON)
+    Thread::sleep(5000)  // wait 5 seconds
+    executeCommandLine("/usr/bin/sshpass","-p","<password>","/usr/bin/ssh","-t","-o","StrictHostKeyChecking=no","<user>@<ip>","C:\Program Files\PSTools\PsExec.exe","-u","<user>","-p","<password>","-i","1","-w","C:\Users\<user>","powershell.exe","<path/to/python.exe>","C:\Users\<user>\room_view.py","changeSourceToComputer1")
+    Crestron_RoomView_Control_SrcToComputer1.postUpdate(OFF)
+    Thread::sleep(3000)
+    Crestron_RoomView_Control_CloseFirefox.sendCommand(ON)
+end
+
+rule "Crestron_RoomView_Control_SrcToComputer2 changed to ON"
+when
+    Item Crestron_RoomView_Control_SrcToComputer2 changed to ON
+then
+    Crestron_RoomView_Control_OpenFirefox.sendCommand(ON)
+    Thread::sleep(5000)  // wait 5 seconds
+    executeCommandLine("/usr/bin/sshpass","-p","<password>","/usr/bin/ssh","-t","-o","StrictHostKeyChecking=no","<user>@<ip>","C:\Program Files\PSTools\PsExec.exe","-u","<user>","-p","<password>","-i","1","-w","C:\Users\<user>","powershell.exe","<path/to/python.exe>","C:\Users\<user>\room_view.py","changeSourceToComputer2")
+    Crestron_RoomView_Control_SrcToComputer2.postUpdate(OFF)
+    Thread::sleep(3000)
+    Crestron_RoomView_Control_CloseFirefox.sendCommand(ON)
+end
+
+rule "Crestron_RoomView_Control_SrcToHDMI1 changed to ON"
+when
+    Item Crestron_RoomView_Control_SrcToHDMI1 changed to ON
+then
+    Crestron_RoomView_Control_OpenFirefox.sendCommand(ON)
+    Thread::sleep(5000)  // wait 5 seconds
+    executeCommandLine("/usr/bin/sshpass","-p","<password>","/usr/bin/ssh","-t","-o","StrictHostKeyChecking=no","<user>@<ip>","C:\Program Files\PSTools\PsExec.exe","-u","<user>","-p","<password>","-i","1","-w","C:\Users\<user>","powershell.exe","<path/to/python.exe>","C:\Users\<user>\room_view.py","changeSourceToHDMI1")
+    Crestron_RoomView_Control_SrcToHDMI1.postUpdate(OFF)
+    Thread::sleep(3000)
+    Crestron_RoomView_Control_CloseFirefox.sendCommand(ON)
+end
+
+rule "Crestron_RoomView_Control_SrcToHDMI2 changed to ON"
+when
+    Item Crestron_RoomView_Control_SrcToHDMI2 changed to ON
+then
+    Crestron_RoomView_Control_OpenFirefox.sendCommand(ON)
+    Thread::sleep(5000)  // wait 5 seconds
+    executeCommandLine("/usr/bin/sshpass","-p","<password>","/usr/bin/ssh","-t","-o","StrictHostKeyChecking=no","<user>@<ip>","C:\Program Files\PSTools\PsExec.exe","-u","<user>","-p","<password>","-i","1","-w","C:\Users\<user>","powershell.exe","<path/to/python.exe>","C:\Users\<user>\room_view.py","changeSourceToHDMI2")
+    Crestron_RoomView_Control_SrcToHDMI2.postUpdate(OFF)
+    Thread::sleep(3000)
+    Crestron_RoomView_Control_CloseFirefox.sendCommand(ON)
+end
+
+rule "Crestron_RoomView_Control_SrcToVideo changed to ON"
+when
+    Item Crestron_RoomView_Control_SrcToVideo changed to ON
+then
+    Crestron_RoomView_Control_OpenFirefox.sendCommand(ON)
+    Thread::sleep(5000)  // wait 5 seconds
+    executeCommandLine("/usr/bin/sshpass","-p","<password>","/usr/bin/ssh","-t","-o","StrictHostKeyChecking=no","<user>@<ip>","C:\Program Files\PSTools\PsExec.exe","-u","<user>","-p","<password>","-i","1","-w","C:\Users\<user>","powershell.exe","<path/to/python.exe>","C:\Users\<user>\room_view.py","changeSourceToVideo")
+    Crestron_RoomView_Control_SrcToVideo.postUpdate(OFF)
+    Thread::sleep(3000)
+    Crestron_RoomView_Control_CloseFirefox.sendCommand(ON)
+end
+```
+
+## Sitemaps
+
+At least you have to add following to your sitemap:
+
+```
+Text label="Crestron RoomView Control" icon="screen" {
+    Switch item=Crestron_RoomView_Control_TogglePower label="On/off projector" mappings=[ON="Power"]
+    Switch item=Crestron_RoomView_Control_VolumeDown label="Decrease volume" mappings=[ON="Vol -"]
+    Switch item=Crestron_RoomView_Control_VolumeUp label="Increase volume" mappings=[ON="Vol +"]
+    Switch item=Crestron_RoomView_Control_Mute_Volume label="Mute volume" mappings=[ON="Mute volume"]
+    Switch item=Crestron_RoomView_Control_SrcToComputer1 label="Computer1/YPbPr1" mappings=[ON="Computer1/YPbPr1"]
+    Switch item=Crestron_RoomView_Control_SrcToComputer2 label="Computer2/YPbPr2" mappings=[ON="Computer2/YPbPr2"]
+    Switch item=Crestron_RoomView_Control_SrcToHDMI1 label="HDMI1" mappings=[ON="HDMI1"]
+    Switch item=Crestron_RoomView_Control_SrcToHDMI2 label="HDMI2" mappings=[ON="HDMI2"]
+    Switch item=Crestron_RoomView_Control_SrcToVideo label="Video" mappings=[ON="Video"]
+}
+```
