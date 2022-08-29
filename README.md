@@ -143,6 +143,10 @@ Please make sure that you replace `<user>` with the username of your VM and `<pa
  * You have to make sure that Firefox is your default browser.
  * You have to make sure that Firefox will start in Fullscreen mode. Therefore you can run firefox and activate the fullscreen mode. On the next start the fullscreen mode should automatically be activated.
  * You have to make sure that the virtual machine is starting and the user is logged in. I recommend to autologin the user because pyautogui can only run if the user is logged in.
+ 
+## Known issues
+
+* Sadly you will not receive a feedback from your projector. So you don't know if the projector is really started by a click or if it was already on and you turn it off again.
 
 ## Items
 
