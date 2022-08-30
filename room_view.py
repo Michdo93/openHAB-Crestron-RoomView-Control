@@ -7,7 +7,7 @@ import sys
 pyautogui.FAILSAFE = False
 
 def openFirefox():
-    webbrowser.open("<url>")
+    webbrowser.open("<url>", new = 0, autoraise = True)
 
 def closeFirefox():
     pyautogui.click(x=20, y=20, clicks=1, button="left")
