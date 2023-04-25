@@ -28,18 +28,23 @@ At first you have to install `pyautogui`:
 ```
 pip install pyautogui
 pip install pillow
+pip install opencv-python
 ```
 
 Maybe on Linux you have to run
 
 ```
 python3 -m pip install pyautogui
+python3 -m pip install pillow
+python3 -m pip install opencv-python
 ```
 
 On Windows it is definitely
 
 ```
 python -m pip install pyautogui
+python -m pip install pillow
+python -m pip install opencv-python
 ```
 
 Then you have to download the `room_view.py` file and place it to a path where you can run it inside your VM. On a Linux VM as example:
