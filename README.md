@@ -27,6 +27,7 @@ At first you have to install `pyautogui`:
 
 ```
 pip install pyautogui
+pip install pillow
 ```
 
 Maybe on Linux you have to run
