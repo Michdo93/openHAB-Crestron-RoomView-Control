@@ -460,6 +460,7 @@ def decreaseSharpness():
 
 def __clickInsideBrowser():
     pyautogui.click(x=50, y=50, clicks=1, button="left")
+    time.sleep(1)
 
 def __sourceDown():
     source_down = pyautogui.locateOnScreen('images/source_down.PNG')
