@@ -193,10 +193,10 @@ def changeSourceToHDMI1():
 def changeSourceToHDMI2():
     __clickInsideBrowser()
     __sourceUp()
-    hdmi2 = pyautogui.locateOnScreen('images/hdmi2.PNG', confidence=0.9)
-    hdmi2_focused = pyautogui.locateOnScreen('images/hdmi2_focused.PNG', confidence=0.9)
-    hdmi2_selected = pyautogui.locateOnScreen('images/hdmi2_selected.PNG', confidence=0.9)
-    hdmi2_selected_focused = pyautogui.locateOnScreen('images/hdmi2_selected_focused.PNG', confidence=0.9)
+    hdmi2 = pyautogui.locateOnScreen('images/hdmi2.PNG', confidence=0.2)
+    hdmi2_focused = pyautogui.locateOnScreen('images/hdmi2_focused.PNG', confidence=0.2)
+    hdmi2_selected = pyautogui.locateOnScreen('images/hdmi2_selected.PNG', confidence=0.2)
+    hdmi2_selected_focused = pyautogui.locateOnScreen('images/hdmi2_selected_focused.PNG', confidence=0.2)
 
     if hdmi2 is not None:
         hdmi2_center = pyautogui.center(hdmi2)
