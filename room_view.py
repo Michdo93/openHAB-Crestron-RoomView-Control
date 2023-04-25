@@ -130,10 +130,10 @@ def muteVolume():
 def changeSourceToComputer1():
     __clickInsideBrowser()
     __sourceUp()
-    computer1 = pyautogui.locateOnScreen('images/computer1.PNG', confidence=0.5)
-    computer1_focused = pyautogui.locateOnScreen('images/computer1_focused.PNG', confidence=0.5)
-    computer1_selected = pyautogui.locateOnScreen('images/computer1_selected.PNG', confidence=0.5)
-    computer1_selected_focused = pyautogui.locateOnScreen('images/computer1_selected_focused.PNG', confidence=0.5)
+    computer1 = pyautogui.locateOnScreen('images/computer1.PNG', confidence=0.8)
+    computer1_focused = pyautogui.locateOnScreen('images/computer1_focused.PNG', confidence=0.8)
+    computer1_selected = pyautogui.locateOnScreen('images/computer1_selected.PNG', confidence=0.8)
+    computer1_selected_focused = pyautogui.locateOnScreen('images/computer1_selected_focused.PNG', confidence=0.8)
 
     if computer1 is not None:
         computer1_center = pyautogui.center(computer1)
@@ -151,10 +151,10 @@ def changeSourceToComputer1():
 def changeSourceToComputer2():
     __clickInsideBrowser()
     __sourceUp()
-    computer2 = pyautogui.locateOnScreen('images/computer2.PNG', confidence=0.5)
-    computer2_focused = pyautogui.locateOnScreen('images/computer2_focused.PNG', confidence=0.5)
-    computer2_selected = pyautogui.locateOnScreen('images/computer2_selected.PNG', confidence=0.5)
-    computer2_selected_focused = pyautogui.locateOnScreen('images/computer2_selected_focused.PNG', confidence=0.5)
+    computer2 = pyautogui.locateOnScreen('images/computer2.PNG', confidence=0.8)
+    computer2_focused = pyautogui.locateOnScreen('images/computer2_focused.PNG', confidence=0.8)
+    computer2_selected = pyautogui.locateOnScreen('images/computer2_selected.PNG', confidence=0.8)
+    computer2_selected_focused = pyautogui.locateOnScreen('images/computer2_selected_focused.PNG', confidence=0.8)
 
     if computer2 is not None:
         computer2_center = pyautogui.center(computer2)
@@ -172,10 +172,10 @@ def changeSourceToComputer2():
 def changeSourceToHDMI1():
     __clickInsideBrowser()
     __sourceUp()
-    hdmi1 = pyautogui.locateOnScreen('images/hdmi1.PNG', confidence=0.5)
-    hdmi1_focused = pyautogui.locateOnScreen('images/hdmi1_focused.PNG', confidence=0.5)
-    hdmi1_selected = pyautogui.locateOnScreen('images/hdmi1_selected.PNG', confidence=0.5)
-    hdmi1_selected_focused = pyautogui.locateOnScreen('images/hdmi1_selected_focused.PNG', confidence=0.5)
+    hdmi1 = pyautogui.locateOnScreen('images/hdmi1.PNG', confidence=0.8)
+    hdmi1_focused = pyautogui.locateOnScreen('images/hdmi1_focused.PNG', confidence=0.8)
+    hdmi1_selected = pyautogui.locateOnScreen('images/hdmi1_selected.PNG', confidence=0.8)
+    hdmi1_selected_focused = pyautogui.locateOnScreen('images/hdmi1_selected_focused.PNG', confidence=0.8)
 
     if hdmi1 is not None:
         hdmi1_center = pyautogui.center(hdmi1)
@@ -193,10 +193,10 @@ def changeSourceToHDMI1():
 def changeSourceToHDMI2():
     __clickInsideBrowser()
     __sourceUp()
-    hdmi2 = pyautogui.locateOnScreen('images/hdmi2.PNG', confidence=0.5)
-    hdmi2_focused = pyautogui.locateOnScreen('images/hdmi2_focused.PNG', confidence=0.5)
-    hdmi2_selected = pyautogui.locateOnScreen('images/hdmi2_selected.PNG', confidence=0.5)
-    hdmi2_selected_focused = pyautogui.locateOnScreen('images/hdmi2_selected_focused.PNG', confidence=0.5)
+    hdmi2 = pyautogui.locateOnScreen('images/hdmi2.PNG', confidence=0.8)
+    hdmi2_focused = pyautogui.locateOnScreen('images/hdmi2_focused.PNG', confidence=0.8)
+    hdmi2_selected = pyautogui.locateOnScreen('images/hdmi2_selected.PNG', confidence=0.8)
+    hdmi2_selected_focused = pyautogui.locateOnScreen('images/hdmi2_selected_focused.PNG', confidence=0.8)
 
     if hdmi2 is not None:
         hdmi2_center = pyautogui.center(hdmi2)
@@ -214,10 +214,10 @@ def changeSourceToHDMI2():
 def changeSourceToVideo():
     __clickInsideBrowser()
     __sourceUp()
-    video = pyautogui.locateOnScreen('images/video.PNG', confidence=0.5)
-    video_focused = pyautogui.locateOnScreen('images/video_focused.PNG', confidence=0.5)
-    video_selected = pyautogui.locateOnScreen('images/video_selected.PNG', confidence=0.5)
-    video_selected_focused = pyautogui.locateOnScreen('images/video_selected_focused.PNG', confidence=0.5)
+    video = pyautogui.locateOnScreen('images/video.PNG', confidence=0.8)
+    video_focused = pyautogui.locateOnScreen('images/video_focused.PNG', confidence=0.8)
+    video_selected = pyautogui.locateOnScreen('images/video_selected.PNG', confidence=0.8)
+    video_selected_focused = pyautogui.locateOnScreen('images/video_selected_focused.PNG', confidence=0.8)
 
     if video is not None:
         video_center = pyautogui.center(video)
@@ -235,10 +235,10 @@ def changeSourceToVideo():
 def changeSourceToSVideo():
     __clickInsideBrowser()
     __sourceDown()
-    svideo = pyautogui.locateOnScreen('images/s-video.PNG', confidence=0.5)
-    svideo_focused = pyautogui.locateOnScreen('images/s-video_focused.PNG', confidence=0.5)
-    svideo_selected = pyautogui.locateOnScreen('images/s-video_selected.PNG', confidence=0.5)
-    svideo_selected_focused = pyautogui.locateOnScreen('images/s-video_selected_focused.PNG', confidence=0.5)
+    svideo = pyautogui.locateOnScreen('images/s-video.PNG', confidence=0.8)
+    svideo_focused = pyautogui.locateOnScreen('images/s-video_focused.PNG', confidence=0.8)
+    svideo_selected = pyautogui.locateOnScreen('images/s-video_selected.PNG', confidence=0.8)
+    svideo_selected_focused = pyautogui.locateOnScreen('images/s-video_selected_focused.PNG', confidence=0.8)
 
     if svideo is not None:
         svideo_center = pyautogui.center(svideo)
