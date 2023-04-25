@@ -3,6 +3,7 @@ import pyautogui
 import time
 import os
 import sys
+from PIL import ImageGrab
 
 pyautogui.FAILSAFE = False
 
@@ -15,10 +16,10 @@ def closeFirefox():
 
 def togglePower():
     __clickInsideBrowser()
-    poweron = pyautogui.locateOnScreen('/images/poweron.PNG')
-    poweron_focused = pyautogui.locateOnScreen('/images/poweron_focused.PNG')
-    poweroff = pyautogui.locateOnScreen('/images/poweroff.PNG')
-    poweroff_focused = pyautogui.locateOnScreen('/images/powernoff_focused.PNG')
+    poweron = pyautogui.locateOnScreen('images/poweron.PNG')
+    poweron_focused = pyautogui.locateOnScreen('images/poweron_focused.PNG')
+    poweroff = pyautogui.locateOnScreen('images/poweroff.PNG')
+    poweroff_focused = pyautogui.locateOnScreen('images/powernoff_focused.PNG')
 
     if poweron is not None:
         poweron_center = pyautogui.center(poweron)
@@ -37,13 +38,13 @@ def togglePower():
 
 def powerOn():
     __clickInsideBrowser()
-    poweron = pyautogui.locateOnScreen('/images/poweron.PNG')
+    poweron = pyautogui.locateOnScreen('images/poweron.PNG')
 
     if poweron is not None:
         poweron_center = pyautogui.center(poweron)
         pyautogui.click(poweron_center)
     else:
-        poweron_focused = pyautogui.locateOnScreen('/images/poweron_focused.PNG')
+        poweron_focused = pyautogui.locateOnScreen('images/poweron_focused.PNG')
 
         if poweron_focused is not None:
             poweron_focused_center = pyautogui.center(poweron_focused)
@@ -51,13 +52,13 @@ def powerOn():
 
 def powerOff():
     __clickInsideBrowser()
-    poweroff = pyautogui.locateOnScreen('/images/poweroff.PNG')
+    poweroff = pyautogui.locateOnScreen('images/poweroff.PNG')
 
     if poweroff is not None:
         poweroff_center = pyautogui.center(poweroff)
         pyautogui.click(poweroff_center)
     else:
-        poweroff_focused = pyautogui.locateOnScreen('/images/poweroff_focused.PNG')
+        poweroff_focused = pyautogui.locateOnScreen('images/poweroff_focused.PNG')
 
         if poweroff_focused is not None:
             poweroff_focused_center = pyautogui.center(poweroff_focused)
@@ -66,7 +67,7 @@ def powerOff():
 
 def __yesToPowerOff():
     time.sleep(1)
-    yes = pyautogui.locateOnScreen('/images/yes.PNG')
+    yes = pyautogui.locateOnScreen('images/yes.PNG')
 
     if yes is not None:
         yes_center = pyautogui.center(yes)
@@ -74,13 +75,13 @@ def __yesToPowerOff():
 
 def reduceVolume():
     __clickInsideBrowser()
-    volumedown = pyautogui.locateOnScreen('/images/volume_down.PNG')
+    volumedown = pyautogui.locateOnScreen('images/volume_down.PNG')
 
     if volumedown is not None:
         volumedown_center = pyautogui.center(volumedown)
         pyautogui.click(volumedown_center)
     else:
-        volumedown_focused = pyautogui.locateOnScreen('/images/volume_down_focused.PNG')
+        volumedown_focused = pyautogui.locateOnScreen('images/volume_down_focused.PNG')
 
         if volumedown_focused is not None:
             volumedown_focused_center = pyautogui.center(volumedown_focused)
@@ -88,13 +89,13 @@ def reduceVolume():
 
 def increaseVolume():
     __clickInsideBrowser()
-    volumeup = pyautogui.locateOnScreen('/images/volume_up.PNG')
+    volumeup = pyautogui.locateOnScreen('images/volume_up.PNG')
 
     if volumeup is not None:
         volumeup_center = pyautogui.center(volumeup)
         pyautogui.click(volumeup_center)
     else:
-        volumeup_focused = pyautogui.locateOnScreen('/images/volume_up_focused.PNG')
+        volumeup_focused = pyautogui.locateOnScreen('images/volume_up_focused.PNG')
 
         if volumeup_focused is not None:
             volumeup_focused_center = pyautogui.center(volumeup_focused)
@@ -102,10 +103,10 @@ def increaseVolume():
 
 def muteVolume():
     __clickInsideBrowser()
-    mute = pyautogui.locateOnScreen('/images/mute.PNG')
-    mute_focused = pyautogui.locateOnScreen('/images/mute_focused.PNG')
-    mute_selected = pyautogui.locateOnScreen('/images/mute_selected.PNG')
-    mute_selected_focused = pyautogui.locateOnScreen('/images/mute_selected_focused.PNG')
+    mute = pyautogui.locateOnScreen('images/mute.PNG')
+    mute_focused = pyautogui.locateOnScreen('images/mute_focused.PNG')
+    mute_selected = pyautogui.locateOnScreen('images/mute_selected.PNG')
+    mute_selected_focused = pyautogui.locateOnScreen('images/mute_selected_focused.PNG')
 
     if mute is not None:
         mute_center = pyautogui.center(mute)
@@ -123,10 +124,10 @@ def muteVolume():
 def changeSourceToComputer1():
     __clickInsideBrowser()
     __sourceUp()
-    computer1 = pyautogui.locateOnScreen('/images/computer1.PNG')
-    computer1_focused = pyautogui.locateOnScreen('/images/computer1_focused.PNG')
-    computer1_selected = pyautogui.locateOnScreen('/images/computer1_selected.PNG')
-    computer1_selected_focused = pyautogui.locateOnScreen('/images/computer1_selected_focused.PNG')
+    computer1 = pyautogui.locateOnScreen('images/computer1.PNG')
+    computer1_focused = pyautogui.locateOnScreen('images/computer1_focused.PNG')
+    computer1_selected = pyautogui.locateOnScreen('images/computer1_selected.PNG')
+    computer1_selected_focused = pyautogui.locateOnScreen('images/computer1_selected_focused.PNG')
 
     if computer1 is not None:
         computer1_center = pyautogui.center(computer1)
@@ -144,10 +145,10 @@ def changeSourceToComputer1():
 def changeSourceToComputer2():
     __clickInsideBrowser()
     __sourceUp()
-    computer2 = pyautogui.locateOnScreen('/images/computer2.PNG')
-    computer2_focused = pyautogui.locateOnScreen('/images/computer2_focused.PNG')
-    computer2_selected = pyautogui.locateOnScreen('/images/computer2_selected.PNG')
-    computer2_selected_focused = pyautogui.locateOnScreen('/images/computer2_selected_focused.PNG')
+    computer2 = pyautogui.locateOnScreen('images/computer2.PNG')
+    computer2_focused = pyautogui.locateOnScreen('images/computer2_focused.PNG')
+    computer2_selected = pyautogui.locateOnScreen('images/computer2_selected.PNG')
+    computer2_selected_focused = pyautogui.locateOnScreen('images/computer2_selected_focused.PNG')
 
     if computer2 is not None:
         computer2_center = pyautogui.center(computer2)
@@ -165,10 +166,10 @@ def changeSourceToComputer2():
 def changeSourceToHDMI1():
     __clickInsideBrowser()
     __sourceUp()
-    hdmi1 = pyautogui.locateOnScreen('/images/hdmi1.PNG')
-    hdmi1_focused = pyautogui.locateOnScreen('/images/hdmi1_focused.PNG')
-    hdmi1_selected = pyautogui.locateOnScreen('/images/hdmi1_selected.PNG')
-    hdmi1_selected_focused = pyautogui.locateOnScreen('/images/hdmi1_selected_focused.PNG')
+    hdmi1 = pyautogui.locateOnScreen('images/hdmi1.PNG')
+    hdmi1_focused = pyautogui.locateOnScreen('images/hdmi1_focused.PNG')
+    hdmi1_selected = pyautogui.locateOnScreen('images/hdmi1_selected.PNG')
+    hdmi1_selected_focused = pyautogui.locateOnScreen('images/hdmi1_selected_focused.PNG')
 
     if hdmi1 is not None:
         hdmi1_center = pyautogui.center(hdmi1)
@@ -186,10 +187,10 @@ def changeSourceToHDMI1():
 def changeSourceToHDMI2():
     __clickInsideBrowser()
     __sourceUp()
-    hdmi2 = pyautogui.locateOnScreen('/images/hdmi2.PNG')
-    hdmi2_focused = pyautogui.locateOnScreen('/images/hdmi2_focused.PNG')
-    hdmi2_selected = pyautogui.locateOnScreen('/images/hdmi2_selected.PNG')
-    hdmi2_selected_focused = pyautogui.locateOnScreen('/images/hdmi2_selected_focused.PNG')
+    hdmi2 = pyautogui.locateOnScreen('images/hdmi2.PNG')
+    hdmi2_focused = pyautogui.locateOnScreen('images/hdmi2_focused.PNG')
+    hdmi2_selected = pyautogui.locateOnScreen('images/hdmi2_selected.PNG')
+    hdmi2_selected_focused = pyautogui.locateOnScreen('images/hdmi2_selected_focused.PNG')
 
     if hdmi2 is not None:
         hdmi2_center = pyautogui.center(hdmi2)
@@ -207,10 +208,10 @@ def changeSourceToHDMI2():
 def changeSourceToVideo():
     __clickInsideBrowser()
     __sourceUp()
-    video = pyautogui.locateOnScreen('/images/video.PNG')
-    video_focused = pyautogui.locateOnScreen('/images/video_focused.PNG')
-    video_selected = pyautogui.locateOnScreen('/images/video_selected.PNG')
-    video_selected_focused = pyautogui.locateOnScreen('/images/video_selected_focused.PNG')
+    video = pyautogui.locateOnScreen('images/video.PNG')
+    video_focused = pyautogui.locateOnScreen('images/video_focused.PNG')
+    video_selected = pyautogui.locateOnScreen('images/video_selected.PNG')
+    video_selected_focused = pyautogui.locateOnScreen('images/video_selected_focused.PNG')
 
     if video is not None:
         video_center = pyautogui.center(video)
@@ -228,10 +229,10 @@ def changeSourceToVideo():
 def changeSourceToSVideo():
     __clickInsideBrowser()
     __sourceDown()
-    svideo = pyautogui.locateOnScreen('/images/s-video.PNG')
-    svideo_focused = pyautogui.locateOnScreen('/images/s-video_focused.PNG')
-    svideo_selected = pyautogui.locateOnScreen('/images/s-video_selected.PNG')
-    svideo_selected_focused = pyautogui.locateOnScreen('/images/s-video_selected_focused.PNG')
+    svideo = pyautogui.locateOnScreen('images/s-video.PNG')
+    svideo_focused = pyautogui.locateOnScreen('images/s-video_focused.PNG')
+    svideo_selected = pyautogui.locateOnScreen('images/s-video_selected.PNG')
+    svideo_selected_focused = pyautogui.locateOnScreen('images/s-video_selected_focused.PNG')
 
     if svideo is not None:
         svideo_center = pyautogui.center(svideo)
@@ -248,13 +249,13 @@ def changeSourceToSVideo():
 
 def source():
     __clickInsideBrowser()
-    source = pyautogui.locateOnScreen('/images/source.PNG')
+    source = pyautogui.locateOnScreen('images/source.PNG')
 
     if source is not None:
         source_center = pyautogui.center(source)
         pyautogui.click(source_center)
     else:
-        source_focused = pyautogui.locateOnScreen('/images/source_focused.PNG')
+        source_focused = pyautogui.locateOnScreen('images/source_focused.PNG')
 
         if source_focused is not None:
             source_focused_center = pyautogui.center(source_focused)
@@ -262,13 +263,13 @@ def source():
 
 def auto():
     __clickInsideBrowser()
-    auto = pyautogui.locateOnScreen('/images/auto.PNG')
+    auto = pyautogui.locateOnScreen('images/auto.PNG')
 
     if auto is not None:
         auto_center = pyautogui.center(auto)
         pyautogui.click(auto_center)
     else:
-        auto_focused = pyautogui.locateOnScreen('/images/auto_focused.PNG')
+        auto_focused = pyautogui.locateOnScreen('images/auto_focused.PNG')
 
         if auto_focused is not None:
             auto_focused_center = pyautogui.center(auto_focused)
@@ -276,13 +277,13 @@ def auto():
 
 def blank():
     __clickInsideBrowser()
-    blank = pyautogui.locateOnScreen('/images/blank.PNG')
+    blank = pyautogui.locateOnScreen('images/blank.PNG')
 
     if blank is not None:
         blank_center = pyautogui.center(blank)
         pyautogui.click(blank_center)
     else:
-        blank_focused = pyautogui.locateOnScreen('/images/blank_focused.PNG')
+        blank_focused = pyautogui.locateOnScreen('images/blank_focused.PNG')
 
         if blank_focused is not None:
             blank_focused_center = pyautogui.center(blank_focused)
@@ -290,13 +291,13 @@ def blank():
 
 def enter():
     __clickInsideBrowser()
-    enter = pyautogui.locateOnScreen('/images/enter.PNG')
+    enter = pyautogui.locateOnScreen('images/enter.PNG')
 
     if enter is not None:
         enter_center = pyautogui.center(enter)
         pyautogui.click(enter_center)
     else:
-        enter_focused = pyautogui.locateOnScreen('/images/enter_focused.PNG')
+        enter_focused = pyautogui.locateOnScreen('images/enter_focused.PNG')
 
         if enter_focused is not None:
             enter_focused_center = pyautogui.center(enter_focused)
@@ -304,13 +305,13 @@ def enter():
 
 def freeze():
     __clickInsideBrowser()
-    freeze = pyautogui.locateOnScreen('/images/freeze.PNG')
+    freeze = pyautogui.locateOnScreen('images/freeze.PNG')
 
     if freeze is not None:
         freeze_center = pyautogui.center(freeze)
         pyautogui.click(freeze_center)
     else:
-        freeze_focused = pyautogui.locateOnScreen('/images/freeze_focused.PNG')
+        freeze_focused = pyautogui.locateOnScreen('images/freeze_focused.PNG')
 
         if freeze_focused is not None:
             freeze_focused_center = pyautogui.center(freeze_focused)
@@ -318,13 +319,13 @@ def freeze():
 
 def openMenu():
     __clickInsideBrowser()
-    menu = pyautogui.locateOnScreen('/images/menu.PNG')
+    menu = pyautogui.locateOnScreen('images/menu.PNG')
 
     if menu is not None:
         menu_center = pyautogui.center(menu)
         pyautogui.click(menu_center)
     else:
-        menu_focused = pyautogui.locateOnScreen('/images/menu_focused.PNG')
+        menu_focused = pyautogui.locateOnScreen('images/menu_focused.PNG')
 
         if menu_focused is not None:
             menu_focused_center = pyautogui.center(menu_focused)
@@ -332,13 +333,13 @@ def openMenu():
 
 def menuLeft():
     __clickInsideBrowser()
-    menu_left = pyautogui.locateOnScreen('/images/menu_left.PNG')
+    menu_left = pyautogui.locateOnScreen('images/menu_left.PNG')
 
     if menu_left is not None:
         menu_left_center = pyautogui.center(menu_left)
         pyautogui.click(menu_left_center)
     else:
-        menu_left_focused = pyautogui.locateOnScreen('/images/menu_left_focused.PNG')
+        menu_left_focused = pyautogui.locateOnScreen('images/menu_left_focused.PNG')
 
         if menu_left_focused is not None:
             menu_left_focused_center = pyautogui.center(menu_left_focused)
@@ -346,13 +347,13 @@ def menuLeft():
 
 def menuRight():
     __clickInsideBrowser()
-    menu_right = pyautogui.locateOnScreen('/images/menu_right.PNG')
+    menu_right = pyautogui.locateOnScreen('images/menu_right.PNG')
 
     if menu_right is not None:
         menu_right_center = pyautogui.center(menu_right)
         pyautogui.click(menu_right_center)
     else:
-        menu_right_focused = pyautogui.locateOnScreen('/images/menu_right_focused.PNG')
+        menu_right_focused = pyautogui.locateOnScreen('images/menu_right_focused.PNG')
 
         if menu_right_focused is not None:
             menu_right_focused_center = pyautogui.center(menu_right_focused)
@@ -360,13 +361,13 @@ def menuRight():
 
 def menuUp():
     __clickInsideBrowser()
-    menu_up = pyautogui.locateOnScreen('/images/menu_up.PNG')
+    menu_up = pyautogui.locateOnScreen('images/menu_up.PNG')
 
     if menu_up is not None:
         menu_up_center = pyautogui.center(menu_up)
         pyautogui.click(menu_up_center)
     else:
-        menu_up_focused = pyautogui.locateOnScreen('/images/menu_up_focused.PNG')
+        menu_up_focused = pyautogui.locateOnScreen('images/menu_up_focused.PNG')
 
         if menu_up_focused is not None:
             menu_up_focused_center = pyautogui.center(menu_up_focused)
@@ -374,13 +375,13 @@ def menuUp():
 
 def menuDown():
     __clickInsideBrowser()
-    menu_down = pyautogui.locateOnScreen('/images/menu_down.PNG')
+    menu_down = pyautogui.locateOnScreen('images/menu_down.PNG')
 
     if menu_down is not None:
         menu_down_center = pyautogui.center(menu_down)
         pyautogui.click(menu_down_center)
     else:
-        menu_down_focused = pyautogui.locateOnScreen('/images/menu_down_focused.PNG')
+        menu_down_focused = pyautogui.locateOnScreen('images/menu_down_focused.PNG')
 
         if menu_down_focused is not None:
             menu_down_focused_center = pyautogui.center(menu_down_focused)
@@ -388,7 +389,7 @@ def menuDown():
 
 def increaseBrightness():
     __clickInsideBrowser()
-    brightness = pyautogui.locateOnScreen('/images/brightness.PNG')
+    brightness = pyautogui.locateOnScreen('images/brightness.PNG')
 
     if brightness is not None:
         brightness_center = pyautogui.center(brightness)
@@ -398,7 +399,7 @@ def increaseBrightness():
 
 def increaseContrast():
     __clickInsideBrowser()
-    contrast = pyautogui.locateOnScreen('/images/contrast.PNG')
+    contrast = pyautogui.locateOnScreen('images/contrast.PNG')
 
     if contrast is not None:
         contrast_center = pyautogui.center(contrast)
@@ -408,7 +409,7 @@ def increaseContrast():
 
 def increaseSharpness():
     __clickInsideBrowser()
-    sharpness = pyautogui.locateOnScreen('/images/sharpness.PNG')
+    sharpness = pyautogui.locateOnScreen('images/sharpness.PNG')
 
     if sharpness is not None:
         sharpness_center = pyautogui.center(sharpness)
@@ -418,7 +419,7 @@ def increaseSharpness():
 
 def decreaseBrightness():
     __clickInsideBrowser()
-    brightness = pyautogui.locateOnScreen('/images/brightness.PNG')
+    brightness = pyautogui.locateOnScreen('images/brightness.PNG')
 
     if brightness is not None:
         brightness_center = pyautogui.center(brightness)
@@ -428,7 +429,7 @@ def decreaseBrightness():
 
 def decreaseContrast():
     __clickInsideBrowser()
-    contrast = pyautogui.locateOnScreen('/images/contrast.PNG')
+    contrast = pyautogui.locateOnScreen('images/contrast.PNG')
 
     if contrast is not None:
         contrast_center = pyautogui.center(contrast)
@@ -438,7 +439,7 @@ def decreaseContrast():
 
 def decreaseSharpness():
     __clickInsideBrowser()
-    sharpness = pyautogui.locateOnScreen('/images/sharpness.PNG')
+    sharpness = pyautogui.locateOnScreen('images/sharpness.PNG')
 
     if sharpness is not None:
         sharpness_center = pyautogui.center(sharpness)
@@ -450,65 +451,65 @@ def __clickInsideBrowser():
     pyautogui.click(x=50, y=50, clicks=1, button="left")
 
 def __sourceDown():
-    source_down = pyautogui.locateOnScreen('/images/source_down.PNG')
+    source_down = pyautogui.locateOnScreen('images/source_down.PNG')
 
     if source_down is not None:
         source_down_center = pyautogui.center(source_down)
         pyautogui.click(source_down_center)
     else:
-        source_down_selected = pyautogui.locateOnScreen('/images/source_down_selected.PNG')
+        source_down_selected = pyautogui.locateOnScreen('images/source_down_selected.PNG')
 
         if source_down_selected is not None:
             source_down_selected_center = pyautogui.center(source_down_selected)
             pyautogui.click(source_down_selected_center)
 
 def __sourceUp():
-    source_up = pyautogui.locateOnScreen('/images/source_up.PNG')
+    source_up = pyautogui.locateOnScreen('images/source_up.PNG')
 
     if source_up is not None:
         source_up_center = pyautogui.center(source_up)
         pyautogui.click(source_up_center)
     else:
-        source_up_selected = pyautogui.locateOnScreen('/images/source_up_selected.PNG')
+        source_up_selected = pyautogui.locateOnScreen('images/source_up_selected.PNG')
 
         if source_up_selected is not None:
             source_up_selected_center = pyautogui.center(source_up_selected)
             pyautogui.click(source_up_selected_center)
 
 def __increaseBrightnessContrastSharpness():
-    brightnesscontrastsharpness_up = pyautogui.locateOnScreen('/images/contrastbrightnesssharpness_up.PNG')
+    brightnesscontrastsharpness_up = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_up.PNG')
 
     if brightnesscontrastsharpness_up is not None:
         brightnesscontrastsharpness_up_center = pyautogui.center(brightnesscontrastsharpness_up)
         pyautogui.click(brightnesscontrastsharpness_up_center)
     else:
-        brightnesscontrastsharpness_up_focused = pyautogui.locateOnScreen('/images/contrastbrightnesssharpness_up_focused.PNG')
+        brightnesscontrastsharpness_up_focused = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_up_focused.PNG')
 
         if brightnesscontrastsharpness_up_focused is not None:
             brightnesscontrastsharpness_up_focused_center = pyautogui.center(brightnesscontrastsharpness_up_focused)
             pyautogui.click(brightnesscontrastsharpness_up_focused_center)
 
 def __decreaseBrightnessContrastSharpness():
-    brightnesscontrastsharpness_down = pyautogui.locateOnScreen('/images/contrastbrightnesssharpness_down.PNG')
+    brightnesscontrastsharpness_down = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_down.PNG')
 
     if brightnesscontrastsharpness_down is not None:
         brightnesscontrastsharpness_down_center = pyautogui.center(brightnesscontrastsharpness_down)
         pyautogui.click(brightnesscontrastsharpness_down_center)
     else:
-        brightnesscontrastsharpness_down_focused = pyautogui.locateOnScreen('/images/contrastbrightnesssharpness_down_focused.PNG')
+        brightnesscontrastsharpness_down_focused = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_down_focused.PNG')
 
         if brightnesscontrastsharpness_down_focused is not None:
             brightnesscontrastsharpness_down_focused_center = pyautogui.center(brightnesscontrastsharpness_down_focused)
             pyautogui.click(brightnesscontrastsharpness_down_focused_center)
 
 def __closeBrightnessContrastSharpness():
-    close_brightnesscontrastsharpness = pyautogui.locateOnScreen('/images/close_brightnesscontrastsharpness.PNG')
+    close_brightnesscontrastsharpness = pyautogui.locateOnScreen('images/close_brightnesscontrastsharpness.PNG')
 
     if close_brightnesscontrastsharpness is not None:
         close_brightnesscontrastsharpness_center = pyautogui.center(close_brightnesscontrastsharpness)
         pyautogui.click(close_brightnesscontrastsharpness_center)
     else:
-        close_brightnesscontrastsharpness_focused = pyautogui.locateOnScreen('/images/close_brightnesscontrastsharpness_focused.PNG')
+        close_brightnesscontrastsharpness_focused = pyautogui.locateOnScreen('images/close_brightnesscontrastsharpness_focused.PNG')
 
         if close_brightnesscontrastsharpness_focused is not None:
             close_brightnesscontrastsharpness_focused_center = pyautogui.center(close_brightnesscontrastsharpness_focused)
