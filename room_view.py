@@ -20,6 +20,11 @@ def togglePower():
     poweron_focused = pyautogui.locateOnScreen('images/poweron_focused.PNG')
     poweroff = pyautogui.locateOnScreen('images/poweroff.PNG')
     poweroff_focused = pyautogui.locateOnScreen('images/poweroff_focused.PNG')
+    
+    print(poweron)
+    print(poweron_focused)
+    print(poweroff)
+    print(poweroff_focused)
 
     if poweron is not None:
         poweron_center = pyautogui.center(poweron)
