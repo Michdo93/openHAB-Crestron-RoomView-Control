@@ -72,6 +72,12 @@ def __yesToPowerOff():
     if yes is not None:
         yes_center = pyautogui.center(yes)
         pyautogui.click(yes_center)
+    else:
+        yes_focused = pyautogui.locateOnScreen('images/yes_focused.PNG')
+        
+        if yes_focused is not None:
+            yes_focused_center = pyautogui.center(yes_focused)
+            pyautogui.click(yes_focused_center)
 
 def reduceVolume():
     __clickInsideBrowser()
