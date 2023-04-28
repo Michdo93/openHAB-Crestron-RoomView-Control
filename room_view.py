@@ -16,10 +16,10 @@ def closeFirefox():
 
 def togglePower():
     __clickInsideBrowser()
-    poweron = pyautogui.locateOnScreen('images/poweron.PNG', confidence=0.5)
-    poweron_focused = pyautogui.locateOnScreen('images/poweron_focused.PNG', confidence=0.5)
-    poweroff = pyautogui.locateOnScreen('images/poweroff.PNG', confidence=0.5)
-    poweroff_focused = pyautogui.locateOnScreen('images/poweroff_focused.PNG', confidence=0.5)
+    poweron = pyautogui.locateOnScreen('images/poweron.PNG', confidence=0.85)
+    poweron_focused = pyautogui.locateOnScreen('images/poweron_focused.PNG', confidence=0.85)
+    poweroff = pyautogui.locateOnScreen('images/poweroff.PNG', confidence=0.85)
+    poweroff_focused = pyautogui.locateOnScreen('images/poweroff_focused.PNG', confidence=0.85)
 
     if poweron is not None:
         poweron_center = pyautogui.center(poweron)
@@ -41,7 +41,7 @@ def powerOn():
     poweron = None
     while poweron == None:
         try:
-            poweron = pyautogui.locateOnScreen('images/poweron.PNG', confidence=0.5)
+            poweron = pyautogui.locateOnScreen('images/poweron.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -52,7 +52,7 @@ def powerOn():
         poweron_focused = None
         while poweron_focused == None:
             try:
-                poweron_focused = pyautogui.locateOnScreen('images/poweron_focused.PNG', confidence=0.5)
+                poweron_focused = pyautogui.locateOnScreen('images/poweron_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -65,7 +65,7 @@ def powerOff():
     poweroff = None
     while poweroff == None:
         try:
-            poweroff = pyautogui.locateOnScreen('images/poweroff.PNG', confidence=0.5)
+            poweroff = pyautogui.locateOnScreen('images/poweroff.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -76,7 +76,7 @@ def powerOff():
         poweroff_focused = None
         while poweroff_focused == None:
             try:
-                poweroff_focused = pyautogui.locateOnScreen('images/poweroff_focused.PNG', confidence=0.5)
+                poweroff_focused = pyautogui.locateOnScreen('images/poweroff_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -90,7 +90,7 @@ def __yesToPowerOff():
     yes = None
     while yes == None:
         try:
-            yes = pyautogui.locateOnScreen('images/yes.PNG', confidence=0.5)
+            yes = pyautogui.locateOnScreen('images/yes.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -101,7 +101,7 @@ def __yesToPowerOff():
         yes_focused = None
         while yes_focused == None:
             try:
-                yes_focused = pyautogui.locateOnScreen('images/yes_focused.PNG', confidence=0.5)
+                yes_focused = pyautogui.locateOnScreen('images/yes_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -114,7 +114,7 @@ def reduceVolume():
     volumedown = None
     while volumedown == None:
         try:
-            volumedown = pyautogui.locateOnScreen('images/volume_down.PNG', confidence=0.5)
+            volumedown = pyautogui.locateOnScreen('images/volume_down.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -125,7 +125,7 @@ def reduceVolume():
         volumedown_focused = None
         while volumedown_focused == None:
             try:
-                volumedown_focused = pyautogui.locateOnScreen('images/volume_down_focused.PNG', confidence=0.5)
+                volumedown_focused = pyautogui.locateOnScreen('images/volume_down_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -138,7 +138,7 @@ def increaseVolume():
     volumeup = None
     while volumeup == None:
         try:
-            volumeup = pyautogui.locateOnScreen('images/volume_up.PNG', confidence=0.5)
+            volumeup = pyautogui.locateOnScreen('images/volume_up.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -149,7 +149,7 @@ def increaseVolume():
         volumeup_focused = None
         while volumeup_focused == None:
             try:
-                volumeup_focused = pyautogui.locateOnScreen('images/volume_up_focused.PNG', confidence=0.5)
+                volumeup_focused = pyautogui.locateOnScreen('images/volume_up_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -159,10 +159,10 @@ def increaseVolume():
 
 def muteVolume():
     __clickInsideBrowser()
-    mute = pyautogui.locateOnScreen('images/mute.PNG', confidence=0.5)
-    mute_focused = pyautogui.locateOnScreen('images/mute_focused.PNG', confidence=0.5)
-    mute_selected = pyautogui.locateOnScreen('images/mute_selected.PNG', confidence=0.5)
-    mute_selected_focused = pyautogui.locateOnScreen('images/mute_selected_focused.PNG', confidence=0.5)
+    mute = pyautogui.locateOnScreen('images/mute.PNG', confidence=0.85)
+    mute_focused = pyautogui.locateOnScreen('images/mute_focused.PNG', confidence=0.85)
+    mute_selected = pyautogui.locateOnScreen('images/mute_selected.PNG', confidence=0.85)
+    mute_selected_focused = pyautogui.locateOnScreen('images/mute_selected_focused.PNG', confidence=0.85)
 
     if mute is not None:
         mute_center = pyautogui.center(mute)
@@ -308,7 +308,7 @@ def source():
     source = None
     while source == None:
         try:
-            source = pyautogui.locateOnScreen('images/source.PNG', confidence=0.5)
+            source = pyautogui.locateOnScreen('images/source.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -319,7 +319,7 @@ def source():
         source_focused = None
         while source_focused == None:
             try:
-                source_focused = pyautogui.locateOnScreen('images/source_focused.PNG', confidence=0.5)
+                source_focused = pyautogui.locateOnScreen('images/source_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -332,7 +332,7 @@ def auto():
     auto = None
     while auto == None:
         try:
-            auto = pyautogui.locateOnScreen('images/auto.PNG', confidence=0.5)
+            auto = pyautogui.locateOnScreen('images/auto.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -343,7 +343,7 @@ def auto():
         auto_focused = None
         while auto_focused == None:
             try:
-                auto_focused = pyautogui.locateOnScreen('images/auto_focused.PNG', confidence=0.5)
+                auto_focused = pyautogui.locateOnScreen('images/auto_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -356,7 +356,7 @@ def blank():
     blank = None
     while blank == None:
         try:
-            blank = pyautogui.locateOnScreen('images/blank.PNG', confidence=0.5)
+            blank = pyautogui.locateOnScreen('images/blank.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -367,7 +367,7 @@ def blank():
         blank_focused = None
         while blank_focused == None:
             try:
-                blank_focused = pyautogui.locateOnScreen('images/blank_focused.PNG', confidence=0.5)
+                blank_focused = pyautogui.locateOnScreen('images/blank_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -380,7 +380,7 @@ def enter():
     enter = None
     while enter == None:
         try:
-            enter = pyautogui.locateOnScreen('images/enter.PNG', confidence=0.5)
+            enter = pyautogui.locateOnScreen('images/enter.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -391,7 +391,7 @@ def enter():
         enter_focused = None
         while enter_focused == None:
             try:
-                enter_focused = pyautogui.locateOnScreen('images/enter_focused.PNG', confidence=0.5)
+                enter_focused = pyautogui.locateOnScreen('images/enter_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -404,7 +404,7 @@ def freeze():
     freeze = None
     while freeze == None:
         try:
-            freeze = pyautogui.locateOnScreen('images/freeze.PNG', confidence=0.5)
+            freeze = pyautogui.locateOnScreen('images/freeze.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -415,7 +415,7 @@ def freeze():
         freeze_focused = None
         while freeze_focused == None:
             try:
-                freeze_focused = pyautogui.locateOnScreen('images/freeze_focused.PNG', confidence=0.5)
+                freeze_focused = pyautogui.locateOnScreen('images/freeze_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -428,7 +428,7 @@ def openMenu():
     menu = None
     while menu == None:
         try:
-            menu = pyautogui.locateOnScreen('images/menu.PNG', confidence=0.5)
+            menu = pyautogui.locateOnScreen('images/menu.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -439,7 +439,7 @@ def openMenu():
         menu_focused = None
         while menu_focused == None:
             try:
-                menu_focused = pyautogui.locateOnScreen('images/menu_focused.PNG', confidence=0.5)
+                menu_focused = pyautogui.locateOnScreen('images/menu_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -452,7 +452,7 @@ def menuLeft():
     menu_left = None
     while menu_left == None:
         try:
-            menu_left = pyautogui.locateOnScreen('images/menu_left.PNG', confidence=0.5)
+            menu_left = pyautogui.locateOnScreen('images/menu_left.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -463,7 +463,7 @@ def menuLeft():
         menu_left_focused = None
         while menu_left_focused == None:
             try:
-                menu_left_focused = pyautogui.locateOnScreen('images/menu_left_focused.PNG', confidence=0.5)
+                menu_left_focused = pyautogui.locateOnScreen('images/menu_left_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -476,7 +476,7 @@ def menuRight():
     menu_right = None
     while menu_right == None:
         try:
-            menu_right = pyautogui.locateOnScreen('images/menu_right.PNG', confidence=0.5)
+            menu_right = pyautogui.locateOnScreen('images/menu_right.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -487,7 +487,7 @@ def menuRight():
         menu_right_focused = None
         while menu_right_focused == None:
             try:
-                menu_right_focused = pyautogui.locateOnScreen('images/menu_right_focused.PNG', confidence=0.5)
+                menu_right_focused = pyautogui.locateOnScreen('images/menu_right_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -500,7 +500,7 @@ def menuUp():
     menu_up = None
     while menu_up == None:
         try:
-            menu_up = pyautogui.locateOnScreen('images/menu_up.PNG', confidence=0.5)
+            menu_up = pyautogui.locateOnScreen('images/menu_up.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -511,7 +511,7 @@ def menuUp():
         menu_up_focused = None
         while menu_up_focused == None:
             try:
-                menu_up_focused = pyautogui.locateOnScreen('images/menu_up_focused.PNG', confidence=0.5)
+                menu_up_focused = pyautogui.locateOnScreen('images/menu_up_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -524,7 +524,7 @@ def menuDown():
     menu_down = None
     while menu_down == None:
         try:
-            menu_down = pyautogui.locateOnScreen('images/menu_down.PNG', confidence=0.5)
+            menu_down = pyautogui.locateOnScreen('images/menu_down.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -535,7 +535,7 @@ def menuDown():
         menu_down_focused = None
         while menu_down_focused == None:
             try:
-                menu_down_focused = pyautogui.locateOnScreen('images/menu_down_focused.PNG', confidence=0.5)
+                menu_down_focused = pyautogui.locateOnScreen('images/menu_down_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -548,7 +548,7 @@ def increaseBrightness():
     brightness = None
     while brightness == None:
         try:
-            brightness = pyautogui.locateOnScreen('images/brightness.PNG', confidence=0.5)
+            brightness = pyautogui.locateOnScreen('images/brightness.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -563,7 +563,7 @@ def increaseContrast():
     contrast = None
     while contrast == None:
         try:
-            contrast = pyautogui.locateOnScreen('images/contrast.PNG', confidence=0.5)
+            contrast = pyautogui.locateOnScreen('images/contrast.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -578,7 +578,7 @@ def increaseSharpness():
     sharpness = None
     while sharpness == None:
         try:
-            sharpness = pyautogui.locateOnScreen('images/sharpness.PNG', confidence=0.5)
+            sharpness = pyautogui.locateOnScreen('images/sharpness.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -593,7 +593,7 @@ def decreaseBrightness():
     brightness = None
     while brightness == None:
         try:
-            brightness = pyautogui.locateOnScreen('images/brightness.PNG', confidence=0.5)
+            brightness = pyautogui.locateOnScreen('images/brightness.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -608,7 +608,7 @@ def decreaseContrast():
     contrast = None
     while contrast == None:
         try:
-            contrast = pyautogui.locateOnScreen('images/contrast.PNG', confidence=0.5)
+            contrast = pyautogui.locateOnScreen('images/contrast.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -623,7 +623,7 @@ def decreaseSharpness():
     sharpness = None
     while sharpness == None:
         try:
-            sharpness = pyautogui.locateOnScreen('images/sharpness.PNG', confidence=0.5)
+            sharpness = pyautogui.locateOnScreen('images/sharpness.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -641,7 +641,7 @@ def __sourceDown():
     source_down = None
     while source_down == None:
         try:
-            source_down = pyautogui.locateOnScreen('images/source_down.PNG', confidence=0.5)
+            source_down = pyautogui.locateOnScreen('images/source_down.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -652,7 +652,7 @@ def __sourceDown():
         source_down_selected = None
         while source_down_selected == None:
             try:
-                source_down_selected = pyautogui.locateOnScreen('images/source_down_selected.PNG', confidence=0.5)
+                source_down_selected = pyautogui.locateOnScreen('images/source_down_selected.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -664,7 +664,7 @@ def __sourceUp():
     source_up = None
     while source_up == None:
         try:
-            source_up = pyautogui.locateOnScreen('images/source_up.PNG', confidence=0.5)
+            source_up = pyautogui.locateOnScreen('images/source_up.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -675,7 +675,7 @@ def __sourceUp():
         source_up_selected = None
         while source_up_selected == None:
             try:
-                source_up_selected = pyautogui.locateOnScreen('images/source_up_selected.PNG', confidence=0.5)
+                source_up_selected = pyautogui.locateOnScreen('images/source_up_selected.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
         if source_up_selected is not None:
@@ -686,7 +686,7 @@ def __increaseBrightnessContrastSharpness():
     brightnesscontrastsharpness_up = None
     while brightnesscontrastsharpness_up == None:
         try:
-            brightnesscontrastsharpness_up = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_up.PNG', confidence=0.5)
+            brightnesscontrastsharpness_up = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_up.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -697,7 +697,7 @@ def __increaseBrightnessContrastSharpness():
         brightnesscontrastsharpness_up_focused = None
         while brightnesscontrastsharpness_up_focused == None:
             try:
-                brightnesscontrastsharpness_up_focused = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_up_focused.PNG', confidence=0.5)
+                brightnesscontrastsharpness_up_focused = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_up_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -709,7 +709,7 @@ def __decreaseBrightnessContrastSharpness():
     brightnesscontrastsharpness_down = None
     while brightnesscontrastsharpness_down == None:
         try:
-            brightnesscontrastsharpness_down = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_down.PNG', confidence=0.5)
+            brightnesscontrastsharpness_down = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_down.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -720,7 +720,7 @@ def __decreaseBrightnessContrastSharpness():
         brightnesscontrastsharpness_down_focused = None
         while brightnesscontrastsharpness_down_focused == None:
             try:
-                brightnesscontrastsharpness_down_focused = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_down_focused.PNG', confidence=0.5)
+                brightnesscontrastsharpness_down_focused = pyautogui.locateOnScreen('images/contrastbrightnesssharpness_down_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
@@ -732,7 +732,7 @@ def __closeBrightnessContrastSharpness():
     close_brightnesscontrastsharpness = None
     while close_brightnesscontrastsharpness == None:
         try:
-            close_brightnesscontrastsharpness = pyautogui.locateOnScreen('images/close_brightnesscontrastsharpness.PNG', confidence=0.5)
+            close_brightnesscontrastsharpness = pyautogui.locateOnScreen('images/close_brightnesscontrastsharpness.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
@@ -743,7 +743,7 @@ def __closeBrightnessContrastSharpness():
         close_brightnesscontrastsharpness_focused = None
         while close_brightnesscontrastsharpness_focused == None:
             try:
-                close_brightnesscontrastsharpness_focused = pyautogui.locateOnScreen('images/close_brightnesscontrastsharpness_focused.PNG', confidence=0.5)
+                close_brightnesscontrastsharpness_focused = pyautogui.locateOnScreen('images/close_brightnesscontrastsharpness_focused.PNG', confidence=0.85)
             except Exception as e:
                 print(e)
 
