@@ -11,7 +11,7 @@ def openFirefox(url: str = "<url>"):
     webbrowser.open(url)
 
 def closeFirefox():
-    __clickInsideBrowser()
+    pyautogui.click(x=20, y=20, clicks=1, button="left")
     pyautogui.hotkey("alt", "f4")
 
 def togglePower():
@@ -88,26 +88,27 @@ def powerOff():
 def __yesToPowerOff():
     time.sleep(1)
     yes = None
+
+    timeout = time.time()
     while yes == None:
+        if time.time() > timeout + 1:
+            break
         try:
             yes = pyautogui.locateOnScreen('C:/Users/Admin/openHAB-Crestron-RoomView-Control/images/yes.PNG', confidence=0.85)
+        except Exception as e:
+            print(e)
+
+    while yes == None:
+        if time.time() > timeout + 2:
+            break
+        try:
+            yes = pyautogui.locateOnScreen('C:/Users/Admin/openHAB-Crestron-RoomView-Control/images/yes_focused.PNG', confidence=0.85)
         except Exception as e:
             print(e)
 
     if yes is not None:
         yes_center = pyautogui.center(yes)
         pyautogui.click(yes_center)
-    else:
-        yes_focused = None
-        while yes_focused == None:
-            try:
-                yes_focused = pyautogui.locateOnScreen('C:/Users/Admin/openHAB-Crestron-RoomView-Control/images/yes_focused.PNG', confidence=0.85)
-            except Exception as e:
-                print(e)
-
-        if yes_focused is not None:
-            yes_focused_center = pyautogui.center(yes_focused)
-            pyautogui.click(yes_focused_center)
 
 def reduceVolume():
     __clickInsideBrowser()
@@ -656,7 +657,7 @@ def decreaseSharpness():
         __closeBrightnessContrastSharpness()
 
 def __clickInsideBrowser():
-    pyautogui.click(x=50, y=50, clicks=1, button="left")
+    pyautogui.click(x=25, y=25, clicks=1, button="left")
     time.sleep(1)
 
 def __sourceDown():
